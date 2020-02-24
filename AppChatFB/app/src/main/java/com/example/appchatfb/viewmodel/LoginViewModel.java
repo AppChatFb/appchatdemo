@@ -1,4 +1,4 @@
-package com.example.appchatfb;
+package com.example.appchatfb.viewmodel;
 
 import android.app.Application;
 import android.text.Editable;

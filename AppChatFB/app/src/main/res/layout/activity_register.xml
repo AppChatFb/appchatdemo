@@ -60,6 +60,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
                 android:hint="@string/email_adress"
                 app:layout_constraintStart_toEndOf="@id/img_email"
                 android:layout_marginStart="10dp"

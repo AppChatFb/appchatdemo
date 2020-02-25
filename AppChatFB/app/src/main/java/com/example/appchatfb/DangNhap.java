@@ -25,14 +25,16 @@ public class DangNhap extends AppCompatActivity implements ClickDangNhap {
 
     @Override
     public void clickDangNhap() {
-        if(viewModel.checkLogIn(binding.etEmail.getText().toString().trim(),binding.etPass.getText().toString().trim()))
-        {
-            Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(DangNhap.this, MainActivity.class);
-            startActivity(intent);
-        }
-        else {
-            Toast.makeText(this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
+        if (binding.etEmail.getText().toString().trim().equals("") && binding.etPass.getText().toString().trim().equals("")) {
+            Toast.makeText(this, "Không để trống dữ liệu", Toast.LENGTH_SHORT).show();
+        } else {
+            if (viewModel.checkLogIn(binding.etEmail.getText().toString().trim(), binding.etPass.getText().toString().trim())) {
+                Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DangNhap.this, MainActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

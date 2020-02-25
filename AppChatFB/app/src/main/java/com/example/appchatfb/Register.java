@@ -25,10 +25,17 @@ public class Register extends AppCompatActivity implements Event {
 
     @Override
     public void onClick() {
-        if(viewModel.register(binding.regisUser.getText().toString().trim(),binding.etEmail.getText().toString().trim(),binding.etPass.getText().toString().trim())){
-            Toast.makeText(this, "Đăng kí thành công", Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(Register.this,DangNhap.class);
-            startActivity(intent);
+        if(binding.regisUser.getText().toString().trim().equals("")&&binding.etEmail.getText().toString().trim().equals("")&&binding.etPass.getText().toString().trim().equals(""))
+        {
+            Toast.makeText(this, "Không để trống dữ liệu", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            if (viewModel.register(binding.regisUser.getText().toString().trim(), binding.etEmail.getText().toString().trim(), binding.etPass.getText().toString().trim())) {
+                Toast.makeText(this, "Đăng kí thành công", Toast.LENGTH_SHORT).show();
+                viewModel.addUser(binding.regisUser.getText().toString().trim(), binding.etEmail.getText().toString().trim(), binding.etPass.getText().toString().trim());
+                Intent intent = new Intent(Register.this, DangNhap.class);
+                startActivity(intent);
+            }
         }
     }
 }

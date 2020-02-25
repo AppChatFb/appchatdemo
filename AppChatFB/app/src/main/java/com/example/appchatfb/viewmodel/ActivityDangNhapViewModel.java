@@ -27,7 +27,6 @@ public class ActivityDangNhapViewModel extends ViewModel {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            check=false;
                         }
 
                         // ...
@@ -36,7 +35,6 @@ public class ActivityDangNhapViewModel extends ViewModel {
 
         return check;
     }
-
     public boolean getPass(String email) {
         mAuth=FirebaseAuth.getInstance();
         mAuth.sendPasswordResetEmail(email)

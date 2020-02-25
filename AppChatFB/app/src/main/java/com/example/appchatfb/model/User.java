@@ -1,9 +1,10 @@
 package com.example.appchatfb.model;
 
 public class User {
-    String email,pass,name,anh,isonline;
+    String email,pass,name,anh;
+    Integer isonline;
 
-    public User(String email, String pass, String name, String anh, String isonline) {
+    public User(String email, String pass, String name, String anh, Integer isonline) {
         this.email = email;
         this.pass = pass;
         this.name = name;
@@ -43,11 +44,11 @@ public class User {
         this.anh = anh;
     }
 
-        public String getIsonline() {
+        public Integer getIsonline() {
         return isonline;
     }
 
-    public void setIsonline(String isonline) {
+    public void setIsonline(Integer isonline) {
         this.isonline = isonline;
     }
 }
